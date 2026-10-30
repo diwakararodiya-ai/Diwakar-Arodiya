@@ -1,0 +1,63 @@
+{
+  "id": "/",
+  "name": "किसान मौसम - Kisan Mausam Native",
+  "short_name": "KisanMausam",
+  "description": "भारतीय किसानों के लिए मौसम, लाइव वर्षा रडार, फसल सुरक्षा व दैनिक कृषि समाचार",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait-primary",
+  "theme_color": "#064e3b",
+  "background_color": "#064e3b",
+  "lang": "hi",
+  "dir": "ltr",
+  "categories": ["weather", "agriculture", "productivity"],
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "मौसम रडार (Radar)",
+      "short_name": "Radar",
+      "url": "/",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "कृषि समाचार (News)",
+      "short_name": "News",
+      "url": "/?tab=news",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "किसान AI मित्र (AI Chat)",
+      "short_name": "AI Mitra",
+      "url": "/?tab=ai",
+      "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
+}

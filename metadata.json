@@ -1,0 +1,10 @@
+{
+  "name": "Kisan Mausam - AI Weather & Crop Advisor",
+  "description": "AI-powered, farmer-centric multilingual weather forecasting and agricultural decision companion for Indian farmers with real-time radar, hourly forecasts, and voice assistant.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
