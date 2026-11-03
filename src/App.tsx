@@ -28,6 +28,7 @@ import { LanguageSelectorModal } from './components/LanguageSelectorModal';
 import { SettingsModal } from './components/SettingsModal';
 import { LoginModal } from './components/LoginModal';
 import { AndroidInstallBanner } from './components/AndroidInstallBanner';
+import { PlayStorePublishModal } from './components/PlayStorePublishModal';
 import {
   Sun,
   Newspaper,
@@ -141,6 +142,7 @@ export default function App() {
   const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
   const [isSettingsModalOpen, setIsSettingsModalOpen] = useState(false);
+  const [isPlayStoreModalOpen, setIsPlayStoreModalOpen] = useState(false);
   // Trigger login flow at the start of the app if user is not logged in
   const [isLoginModalOpen, setIsLoginModalOpen] = useState<boolean>(() => {
     const savedUser = localStorage.getItem('kisan_user');
@@ -151,6 +153,35 @@ export default function App() {
 
   // Quick prompt to pass to AI Assistant
   const [aiQuickPrompt, setAiQuickPrompt] = useState<string | null>(null);
+
+  // Android Native Hardware Back Button handler
+  useEffect(() => {
+    const handlePopState = () => {
+      if (isPlayStoreModalOpen) {
+        setIsPlayStoreModalOpen(false);
+      } else if (isLoginModalOpen) {
+        setIsLoginModalOpen(false);
+      } else if (isSettingsModalOpen) {
+        setIsSettingsModalOpen(false);
+      } else if (isLanguageModalOpen) {
+        setIsLanguageModalOpen(false);
+      } else if (isLocationModalOpen) {
+        setIsLocationModalOpen(false);
+      } else if (activeTab !== 'home') {
+        setActiveTab('home');
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [
+    isPlayStoreModalOpen,
+    isLoginModalOpen,
+    isSettingsModalOpen,
+    isLanguageModalOpen,
+    isLocationModalOpen,
+    activeTab,
+  ]);
 
   const t = TRANSLATIONS[language] || TRANSLATIONS.Hindi;
 
@@ -377,6 +408,7 @@ export default function App() {
         onOpenLocationModal={() => setIsLocationModalOpen(true)}
         onOpenLanguageModal={() => setIsLanguageModalOpen(true)}
         onOpenLoginModal={() => setIsLoginModalOpen(true)}
+        onOpenPlayStoreModal={() => setIsPlayStoreModalOpen(true)}
         onGpsDetect={handleGpsDetect}
         isGpsLoading={isGpsLoading}
       />
@@ -422,7 +454,10 @@ export default function App() {
             />
 
             {/* Android Native App Installation & Offline Access Banner */}
-            <AndroidInstallBanner language={language} />
+            <AndroidInstallBanner
+              language={language}
+              onOpenPlayStoreModal={() => setIsPlayStoreModalOpen(true)}
+            />
 
             {/* Direct Operational Agricultural Takeaway */}
             <AgriculturalInsightBanner
@@ -735,6 +770,7 @@ export default function App() {
         language={language}
         onOpenLanguageModal={() => setIsLanguageModalOpen(true)}
         onClearCache={handleClearCache}
+        onOpenPlayStoreModal={() => setIsPlayStoreModalOpen(true)}
       />
 
       {/* Minimal Login & Profile Flow Modal */}
@@ -749,6 +785,14 @@ export default function App() {
         onLogout={handleLogout}
         language={language}
       />
+
+      {/* Google Play Store & Android Native Publication Modal */}
+      {isPlayStoreModalOpen && (
+        <PlayStorePublishModal
+          language={language}
+          onClose={() => setIsPlayStoreModalOpen(false)}
+        />
+      )}
     </div>
   );
 }

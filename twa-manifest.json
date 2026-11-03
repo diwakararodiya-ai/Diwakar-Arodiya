@@ -1,0 +1,63 @@
+{
+  "packageId": "com.kisaancare.app",
+  "host": "ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app",
+  "name": "Kisaan Care - किसान केयर",
+  "launcherName": "KisaanCare",
+  "themeColor": "#064e3b",
+  "navigationColor": "#064e3b",
+  "navigationColorDark": "#022c22",
+  "navigationDividerColor": "#064e3b",
+  "navigationDividerColorDark": "#022c22",
+  "backgroundColor": "#064e3b",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/pwa-512x512.png",
+  "maskableIconUrl": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/pwa-maskable-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./kisaan-care-release.jks",
+    "alias": "kisaan-care"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "Live Weather & Radar",
+      "shortName": "Weather",
+      "url": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/?tab=home",
+      "chosenIconUrl": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/pwa-192x192.png"
+    },
+    {
+      "name": "Agri News & Mandi",
+      "shortName": "AgriNews",
+      "url": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/?tab=news",
+      "chosenIconUrl": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/pwa-192x192.png"
+    },
+    {
+      "name": "Kisaan AI Mitra",
+      "shortName": "AI Care",
+      "url": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/?tab=ai",
+      "chosenIconUrl": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/pwa-192x192.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": true
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isAndroidAutoEnabled": false,
+  "fullScopeUrl": "https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app/",
+  "minSdkVersion": 24,
+  "targetSdkVersion": 34
+}

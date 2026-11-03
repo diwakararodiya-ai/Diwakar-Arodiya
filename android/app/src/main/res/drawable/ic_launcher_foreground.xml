@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="0.65"
+        android:scaleY="0.65"
+        android:translateX="18.9"
+        android:translateY="18.9">
+        <!-- Sun with Amber Glow -->
+        <path
+            android:fillColor="#FBBF24"
+            android:pathData="M70,38m-14,0a14,14 0,1 1,28 0a14,14 0,1 1,-28 0" />
+        <!-- Sprout Stem & Leaf -->
+        <path
+            android:fillColor="#10B981"
+            android:pathData="M48,82 C48,60 58,46 76,42 C76,58 64,74 48,82 Z" />
+        <!-- Secondary Sprout Leaf -->
+        <path
+            android:fillColor="#34D399"
+            android:pathData="M52,70 C52,56 42,48 28,46 C28,58 38,68 52,70 Z" />
+        <!-- Water / Rain Droplet -->
+        <path
+            android:fillColor="#38BDF8"
+            android:pathData="M34,36 C34,36 40,44 40,48 C40,51.3 37.3,54 34,54 C30.7,54 28,51.3 28,48 C28,44 34,36 34,36 Z" />
+    </group>
+</vector>

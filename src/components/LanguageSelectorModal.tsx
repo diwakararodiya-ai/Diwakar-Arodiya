@@ -2,6 +2,7 @@ import React from 'react';
 import { SupportedLanguage } from '../types';
 import { LANGUAGE_METADATA, TRANSLATIONS } from '../translations';
 import { Globe, Check, X } from 'lucide-react';
+import { KisaanCareLogo } from './KisaanCareLogo';
 
 interface LanguageSelectorModalProps {
   isOpen: boolean;
@@ -42,16 +43,16 @@ export const LanguageSelectorModal: React.FC<LanguageSelectorModalProps> = ({
         {/* Header */}
         <div className="p-4 sm:p-5 bg-gradient-to-r from-emerald-950/90 via-emerald-900/85 to-emerald-950/90 backdrop-blur-xl text-white flex items-center justify-between border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-300 text-emerald-950 flex items-center justify-center font-bold text-lg shadow-sm border border-amber-200">
-              <Globe className="w-5 h-5 text-emerald-950" />
-            </div>
+            <KisaanCareLogo size="sm" />
             <div>
-              <h3 className="font-bold text-base sm:text-lg tracking-tight">
+              <div className="flex items-center gap-1.5">
+                <span className="font-extrabold text-xs uppercase tracking-wider text-amber-300">Kisaan Care</span>
+                <span className="text-stone-400 text-xs">•</span>
+                <span className="text-xs text-emerald-200">किसान केयर</span>
+              </div>
+              <h3 className="font-bold text-base sm:text-lg tracking-tight text-white mt-0.5">
                 {t.selectLanguage}
               </h3>
-              <p className="text-xs text-emerald-200/90">
-                Choose your regional language • अपनी भाषा चुनें
-              </p>
             </div>
           </div>
           {!isOnboarding && (

@@ -388,7 +388,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({
         <div>
           <div className="flex items-center gap-2">
             <span className="font-bold text-sm sm:text-base text-white">
-              {isHindi ? 'किसान मौसम मित्र' : 'Kisan Weather Mitra'}
+              {isHindi ? 'किसान केयर AI मित्र' : 'Kisaan Care AI Mitra'}
             </span>
             <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-800 text-emerald-200">
               {langMeta.nativeName}

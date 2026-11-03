@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { usePWAInstall } from '../hooks/usePWAInstall';
 import { SupportedLanguage } from '../types';
-import { Download, CheckCircle, Smartphone, X, Sparkles, ShieldCheck } from 'lucide-react';
+import { Download, CheckCircle, Smartphone, X, Sparkles, ShieldCheck, Play } from 'lucide-react';
+import { KisaanCareLogo } from './KisaanCareLogo';
 
 interface AndroidInstallBannerProps {
   language: SupportedLanguage;
   compact?: boolean;
+  onOpenPlayStoreModal?: () => void;
 }
 
 export const AndroidInstallBanner: React.FC<AndroidInstallBannerProps> = ({
   language,
   compact = false,
+  onOpenPlayStoreModal,
 }) => {
   const { isInstallable, isInstalled, isAndroid, isIOS, install } = usePWAInstall();
   const [showGuide, setShowGuide] = useState(false);
@@ -21,15 +24,29 @@ export const AndroidInstallBanner: React.FC<AndroidInstallBannerProps> = ({
 
   // If already installed and running standalone
   if (isInstalled) {
-    if (compact) return null;
+    if (compact) {
+      return (
+        <button
+          type="button"
+          onClick={onOpenPlayStoreModal}
+          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-emerald-800/80 hover:bg-emerald-700/80 text-white text-xs font-bold transition-all border border-emerald-400/40 cursor-pointer shadow-sm active:scale-95"
+          title={isHindi ? 'Google Play Store हब' : 'Google Play Hub'}
+        >
+          <span className="text-xs">🤖</span>
+          <span className="hidden sm:inline">
+            {isHindi ? 'Play Store' : 'Play Store'}
+          </span>
+        </button>
+      );
+    }
     return (
-      <div className="p-3 rounded-xl bg-emerald-900/40 border border-emerald-500/40 backdrop-blur-md flex items-center justify-between gap-3 text-xs text-emerald-200">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold">
+      <div className="p-3.5 rounded-2xl bg-emerald-900/40 border border-emerald-500/40 backdrop-blur-md flex items-center justify-between gap-3 text-xs text-emerald-200">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-sm">
             🤖
           </div>
           <div>
-            <p className="font-bold text-white text-xs">
+            <p className="font-bold text-white text-xs sm:text-sm">
               {isHindi ? 'Android Native App सक्रिय है' : 'Android Native App Active'}
             </p>
             <p className="text-[11px] text-emerald-300/80">
@@ -37,10 +54,22 @@ export const AndroidInstallBanner: React.FC<AndroidInstallBannerProps> = ({
             </p>
           </div>
         </div>
-        <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-300 bg-emerald-800/80 px-2 py-0.5 rounded-full">
-          <CheckCircle className="w-3 h-3 text-emerald-400" />
-          {isHindi ? 'इंस्टॉल्ड' : 'Installed'}
-        </span>
+        <div className="flex items-center gap-2">
+          {onOpenPlayStoreModal && (
+            <button
+              type="button"
+              onClick={onOpenPlayStoreModal}
+              className="px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-bold text-xs flex items-center gap-1 cursor-pointer transition-all"
+            >
+              <Smartphone className="w-3.5 h-3.5 text-amber-300" />
+              <span>{isHindi ? 'Play Store फाइल्स' : 'Play Store Files'}</span>
+            </button>
+          )}
+          <span className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-300 bg-emerald-800/80 px-2.5 py-1 rounded-full">
+            <CheckCircle className="w-3 h-3 text-emerald-400" />
+            {isHindi ? 'इंस्टॉल्ड' : 'Installed'}
+          </span>
+        </div>
       </div>
     );
   }
@@ -57,24 +86,39 @@ export const AndroidInstallBanner: React.FC<AndroidInstallBannerProps> = ({
   if (compact) {
     return (
       <>
-        <button
-          type="button"
-          onClick={handleInstallClick}
-          className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold transition-all shadow-md shadow-emerald-950/20 active:scale-95 border border-emerald-400/40 cursor-pointer"
-          title={isHindi ? 'Android ऐप इंस्टॉल करें' : 'Install Android App'}
-        >
-          <span className="text-xs">🤖</span>
-          <Download className="w-3.5 h-3.5" />
-          <span className="hidden md:inline">
-            {isHindi ? 'ऐप इंस्टॉल करें' : 'Install App'}
-          </span>
-        </button>
+        <div className="flex items-center gap-1.5">
+          <button
+            type="button"
+            onClick={handleInstallClick}
+            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-bold transition-all shadow-md shadow-emerald-950/20 active:scale-95 border border-emerald-400/40 cursor-pointer"
+            title={isHindi ? 'Android ऐप इंस्टॉल करें' : 'Install Android App'}
+          >
+            <span className="text-xs">🤖</span>
+            <Download className="w-3.5 h-3.5" />
+            <span className="hidden md:inline">
+              {isHindi ? 'ऐप इंस्टॉल करें' : 'Install App'}
+            </span>
+          </button>
+
+          {onOpenPlayStoreModal && (
+            <button
+              type="button"
+              onClick={onOpenPlayStoreModal}
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-emerald-900/60 hover:bg-emerald-800/80 text-amber-300 hover:text-amber-200 text-xs font-bold transition-all border border-amber-400/30 cursor-pointer active:scale-95"
+              title={isHindi ? 'Google Play Store व AAB पैकेज हब' : 'Google Play Store & AAB Hub'}
+            >
+              <Smartphone className="w-3.5 h-3.5" />
+              <span className="hidden lg:inline">Play Store</span>
+            </button>
+          )}
+        </div>
 
         {showGuide && (
           <InstallGuideModal
             isHindi={isHindi}
             isAndroid={isAndroid}
             isIOS={isIOS}
+            onOpenPlayStoreModal={onOpenPlayStoreModal}
             onClose={() => setShowGuide(false)}
           />
         )}
@@ -89,34 +133,46 @@ export const AndroidInstallBanner: React.FC<AndroidInstallBannerProps> = ({
         <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-emerald-500/10 rounded-full blur-xl pointer-events-none" />
 
         <div className="flex items-start sm:items-center gap-3 relative z-10">
-          <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center font-bold text-xl shadow-md border border-white/30 shrink-0">
-            🤖
-          </div>
+          <KisaanCareLogo size="md" />
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <h4 className="font-extrabold text-sm sm:text-base tracking-tight text-white">
-                {isHindi ? 'किसान मौसम Android Native App' : 'Kisan Mausam Android Native App'}
+                {isHindi ? 'किसान केयर Android Native App' : 'Kisaan Care Android Native App'}
               </h4>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-700/80 text-emerald-200 border border-emerald-400/30">
-                APK / PWA
+                Play Store Ready
+              </span>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30">
+                Target SDK 34
               </span>
             </div>
             <p className="text-xs text-emerald-200/90 mt-0.5 font-normal leading-relaxed max-w-lg">
               {isHindi
-                ? 'अपने Android फ़ोन पर इंस्टॉल करें: बिना इंटरनेट मौसम रडार, त्वरित होम स्क्रीन लॉन्च व सटीक अलर्ट।'
-                : 'Install directly on your phone: Instant home-screen access, full offline radar & live weather alerts.'}
+                ? 'अपने Android फ़ोन पर इंस्टॉल करें या Google Play Store के लिए AAB/APK पैकेज देखें।'
+                : 'Install directly on your phone or inspect Android Studio package & AAB files for Google Play Store.'}
             </p>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 relative z-10 self-end sm:self-auto shrink-0">
+        <div className="flex items-center gap-2 relative z-10 self-end sm:self-auto shrink-0 flex-wrap">
+          {onOpenPlayStoreModal && (
+            <button
+              type="button"
+              onClick={onOpenPlayStoreModal}
+              className="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs sm:text-sm flex items-center gap-1.5 backdrop-blur-md border border-white/20 active:scale-95 transition-all cursor-pointer"
+            >
+              <Smartphone className="w-4 h-4 text-amber-300" />
+              <span>{isHindi ? 'Play Store हब' : 'Play Store Hub'}</span>
+            </button>
+          )}
+
           <button
             type="button"
             onClick={handleInstallClick}
             className="px-4 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-extrabold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95 transition-all cursor-pointer border border-amber-200"
           >
             <Download className="w-4 h-4 stroke-[2.5]" />
-            <span>{isHindi ? 'फ़ोन में इंस्टॉल करें' : 'Install on Android'}</span>
+            <span>{isHindi ? 'फ़ोन में इंस्टॉल करें' : 'Install on Phone'}</span>
           </button>
 
           <button
@@ -135,6 +191,7 @@ export const AndroidInstallBanner: React.FC<AndroidInstallBannerProps> = ({
           isHindi={isHindi}
           isAndroid={isAndroid}
           isIOS={isIOS}
+          onOpenPlayStoreModal={onOpenPlayStoreModal}
           onClose={() => setShowGuide(false)}
         />
       )}
@@ -146,6 +203,7 @@ interface InstallGuideModalProps {
   isHindi: boolean;
   isAndroid: boolean;
   isIOS: boolean;
+  onOpenPlayStoreModal?: () => void;
   onClose: () => void;
 }
 
@@ -153,6 +211,7 @@ const InstallGuideModal: React.FC<InstallGuideModalProps> = ({
   isHindi,
   isAndroid,
   isIOS,
+  onOpenPlayStoreModal,
   onClose,
 }) => {
   return (
@@ -224,16 +283,32 @@ const InstallGuideModal: React.FC<InstallGuideModalProps> = ({
               </p>
               <p className="text-xs text-stone-500 mt-0.5">
                 {isHindi
-                  ? 'पुष्टि करते ही किसान मौसम ऐप आपके फ़ोन के होम स्क्रीन और ऐप ड्रॉअर में एक नेटिव ऐप की तरह आ जाएगा।'
-                  : 'Kisan Mausam will appear as a standalone app icon in your app drawer and home screen.'}
+                  ? 'पुष्टि करते ही किसान केयर ऐप आपके फ़ोन के होम स्क्रीन और ऐप ड्रॉअर में एक नेटिव ऐप की तरह आ जाएगा।'
+                  : 'Kisaan Care will appear as a standalone app icon in your app drawer and home screen.'}
               </p>
             </div>
           </div>
 
+          {onOpenPlayStoreModal && (
+            <div className="pt-1">
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  onOpenPlayStoreModal();
+                }}
+                className="w-full py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs flex items-center justify-center gap-1.5 border border-emerald-200 transition-all cursor-pointer"
+              >
+                <Smartphone className="w-4 h-4 text-emerald-700" />
+                <span>{isHindi ? 'Google Play Store व AAB पैकेज देखें' : 'View Google Play Store & AAB Package'}</span>
+              </button>
+            </div>
+          )}
+
           <button
             type="button"
             onClick={onClose}
-            className="w-full py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm mt-2 cursor-pointer transition-all active:scale-95"
+            className="w-full py-2.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs sm:text-sm cursor-pointer transition-all active:scale-95"
           >
             {isHindi ? 'समझ गया' : 'Got it'}
           </button>

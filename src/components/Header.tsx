@@ -3,6 +3,7 @@ import { LocationItem, SupportedLanguage, UserProfile } from '../types';
 import { TRANSLATIONS, LANGUAGE_METADATA } from '../translations';
 import { MapPin, Globe, Navigation, WifiOff, User } from 'lucide-react';
 import { AndroidInstallBanner } from './AndroidInstallBanner';
+import { KisaanCareLogo } from './KisaanCareLogo';
 
 interface HeaderProps {
   currentLocation: LocationItem;
@@ -12,6 +13,7 @@ interface HeaderProps {
   onOpenLocationModal: () => void;
   onOpenLanguageModal: () => void;
   onOpenLoginModal: () => void;
+  onOpenPlayStoreModal?: () => void;
   onGpsDetect: () => void;
   isGpsLoading: boolean;
 }
@@ -24,6 +26,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenLocationModal,
   onOpenLanguageModal,
   onOpenLoginModal,
+  onOpenPlayStoreModal,
   onGpsDetect,
   isGpsLoading,
 }) => {
@@ -35,9 +38,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="max-w-5xl mx-auto px-4 py-3 sm:py-3.5 flex items-center justify-between gap-3">
         {/* Brand identity */}
         <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-400 via-amber-300 to-yellow-200 text-emerald-950 flex items-center justify-center font-bold text-lg shadow-sm ring-1 ring-white/50 shrink-0">
-            🌾
-          </div>
+          <KisaanCareLogo size="sm" />
           <div>
             <div className="flex items-center gap-2">
               <h1 className="text-base sm:text-lg font-bold tracking-tight leading-none text-white">
@@ -78,8 +79,8 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="truncate">{currentLocation.name}</span>
           </button>
 
-          {/* Android Native App Install Button */}
-          <AndroidInstallBanner language={language} compact={true} />
+          {/* Android Native App Install & Play Store Button */}
+          <AndroidInstallBanner language={language} compact={true} onOpenPlayStoreModal={onOpenPlayStoreModal} />
 
           {/* Language Selector Pill */}
           <button

@@ -9,6 +9,7 @@ interface SettingsModalProps {
   language: SupportedLanguage;
   onOpenLanguageModal: () => void;
   onClearCache: () => void;
+  onOpenPlayStoreModal?: () => void;
 }
 
 export const SettingsModal: React.FC<SettingsModalProps> = ({
@@ -17,6 +18,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   language,
   onOpenLanguageModal,
   onClearCache,
+  onOpenPlayStoreModal,
 }) => {
   if (!isOpen) return null;
   const t = TRANSLATIONS[language] || TRANSLATIONS.Hindi;
@@ -136,6 +138,31 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
               • <b>Gemini 3.8 Flash</b>: Grounded conversational agricultural reasoning.
             </p>
           </div>
+
+          {/* Google Play Store & Android Native Package Hub */}
+          {onOpenPlayStoreModal && (
+            <div className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-950 to-stone-900 text-white border border-emerald-500/40 flex items-center justify-between gap-3 shadow-md">
+              <div>
+                <div className="font-bold text-xs sm:text-sm text-white flex items-center gap-1.5">
+                  <span>🤖</span>
+                  <span>{language === 'Hindi' ? 'Google Play Store व AAB पैकेज' : 'Google Play Store & AAB Hub'}</span>
+                </div>
+                <div className="text-[11px] text-emerald-200/90 mt-0.5">
+                  {language === 'Hindi' ? 'Android Studio प्रोजेक्ट, कीस्टोर व स्टोर लिस्टिंग' : 'Package com.kisaancare.app & release files'}
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  onClose();
+                  onOpenPlayStoreModal();
+                }}
+                className="px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-300 text-stone-950 font-bold text-xs shrink-0 transition-all cursor-pointer shadow-sm active:scale-95"
+              >
+                {language === 'Hindi' ? 'फ़ाइलें देखें' : 'View Hub'}
+              </button>
+            </div>
+          )}
 
           {/* Clear Cache */}
           <div className="pt-2 flex justify-between items-center">

@@ -87,8 +87,8 @@ export const LANGUAGE_METADATA: Record<SupportedLanguage, { label: string; nativ
 
 export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
   Hindi: {
-    appTitle: 'किसान मौसम',
-    tagline: 'भारतीय किसानों का मौसम व फसल सलाहकार',
+    appTitle: 'किसान केयर (Kisaan Care)',
+    tagline: 'भारतीय किसानों का मौसम, फसल व सुरक्षा साथी',
     selectLanguage: 'अपनी भाषा चुनें',
     changeLanguage: 'भाषा बदलें',
     home: 'मौसम',
@@ -157,8 +157,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search लाइव डेटा द्वारा सत्यापित',
   },
   Marathi: {
-    appTitle: 'किसान हवामान',
-    tagline: 'शेतकऱ्यांचे अचूक हवामान व पीक मार्गदर्शक',
+    appTitle: 'किसान केअर (Kisaan Care)',
+    tagline: 'शेतकऱ्यांचे अचूक हवामान, पीक व सुरक्षा साथीदार',
     selectLanguage: 'तुमची भाषा निवडा',
     changeLanguage: 'भाषा बदला',
     home: 'हवामान',
@@ -227,8 +227,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search द्वारे पडताळणी केलेले',
   },
   Kannada: {
-    appTitle: 'ಕಿಸಾನ್ ಹವಾಮಾನ',
-    tagline: 'ರೈತರ ನೈಜ ಹವಾಮಾನ ಮತ್ತು ಬೆಳೆ ಸಲಹೆಗಾರ',
+    appTitle: 'ಕಿಸಾನ್ ಕೇರ್ (Kisaan Care)',
+    tagline: 'ರೈತರ ನೈಜ ಹವಾಮಾನ ಮತ್ತು ಬೆಳೆ ರಕ್ಷಣಾ ಸಲಹೆಗಾರ',
     selectLanguage: 'ನಿಮ್ಮ ಭಾಷೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ',
     changeLanguage: 'ಭಾಷೆ ಬದಲಾಯಿಸಿ',
     home: 'ಹವಾಮಾನ',
@@ -297,8 +297,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search ನಿಂದ ಪರಿಶೀಲಿಸಲಾಗಿದೆ',
   },
   Telugu: {
-    appTitle: 'కిసాన్ వాతావరణం',
-    tagline: 'రైతుల కోసం నిజ సమయ వాతావరణం & పంట సలహాలు',
+    appTitle: 'కిసాన్ కేర్ (Kisaan Care)',
+    tagline: 'రైతుల కోసం వాతావరణం, పంట రక్షణ & సేవా సలహాదారు',
     selectLanguage: 'మీ భాషను ఎంచుకోండి',
     changeLanguage: 'భాష మార్చండి',
     home: 'వాతావరణం',
@@ -367,8 +367,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search ద్వారా ధృవీకరించబడింది',
   },
   Tamil: {
-    appTitle: 'கிசான் வானிலை',
-    tagline: 'விவசாயிகளுக்கான வானிலை & பயிர் வழிகாட்டி',
+    appTitle: 'கிசான் கேர் (Kisaan Care)',
+    tagline: 'விவசாயிகளுக்கான வானிலை, பயிர் பாதுகாப்பு & நல்வாழ்வு தோழன்',
     selectLanguage: 'உங்கள் மொழியைத் தேர்ந்தெடுக்கவும்',
     changeLanguage: 'மொழியை மாற்றவும்',
     home: 'வானிலை',
@@ -437,8 +437,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search மூலம் சரிபார்க்கப்பட்டது',
   },
   Bengali: {
-    appTitle: 'কিসান আবহাওয়া',
-    tagline: 'কৃষকদের জন্য নির্ভরযোগ্য আবহাওয়া ও ফসল পরামর্শ',
+    appTitle: 'কিসান কেয়ার (Kisaan Care)',
+    tagline: 'কৃষকদের আবহাওয়া, ফসল সুরক্ষা ও যত্ন সঙ্গী',
     selectLanguage: 'আপনার ভাষা নির্বাচন করুন',
     changeLanguage: 'ভাষা পরিবর্তন করুন',
     home: 'আবহাওয়া',
@@ -507,8 +507,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search দ্বারা যাচাইকৃত',
   },
   Gujarati: {
-    appTitle: 'કિસાન હવામાન',
-    tagline: 'ખેડૂતો માટે સચોટ હવામાન અને પાક સલાહકાર',
+    appTitle: 'કિસાન કેર (Kisaan Care)',
+    tagline: 'ખેડૂતો માટે સચોટ હવામાન, પાક રક્ષણ અને સુરક્ષા સાથી',
     selectLanguage: 'તમારી ભાષા પસંદ કરો',
     changeLanguage: 'ભાષા બદલો',
     home: 'હવામાન',
@@ -577,8 +577,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search દ્વારા ચકાસાયેલ',
   },
   Punjabi: {
-    appTitle: 'ਕਿਸਾਨ ਮੌਸਮ',
-    tagline: 'ਕਿਸਾਨਾਂ ਲਈ ਭਰੋਸੇਯੋਗ ਮੌਸਮ ਅਤੇ ਫ਼ਸਲ ਸਲਾਹਕਾਰ',
+    appTitle: 'ਕਿਸਾਨ ਕੇਅਰ (Kisaan Care)',
+    tagline: 'ਕਿਸਾਨਾਂ ਲਈ ਭਰੋਸੇਯੋਗ ਮੌਸਮ, ਫ਼ਸਲ ਸੁਰੱਖਿਆ ਤੇ ਦੇਖਭਾਲ ਸਾਥੀ',
     selectLanguage: 'ਆਪਣੀ ਭਾਸ਼ਾ ਚੁਣੋ',
     changeLanguage: 'ਭਾਸ਼ਾ ਬਦਲੋ',
     home: 'ਮੌਸਮ',
@@ -647,8 +647,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search ਰਾਹੀਂ ਤਸਦੀਕਸ਼ੁਦਾ',
   },
   Malayalam: {
-    appTitle: 'കിസാൻ കാലാവസ്ഥ',
-    tagline: 'കർഷകർക്കായുള്ള കാലാവസ്ഥ & വിള ഉപദേശകൻ',
+    appTitle: 'കിസാൻ കെയർ (Kisaan Care)',
+    tagline: 'കർഷകർക്കായുള്ള കാലാവസ്ഥ, വിള സംരക്ഷണം & പരിചരണ സഹായി',
     selectLanguage: 'നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക',
     changeLanguage: 'ഭാഷ മാറ്റുക',
     home: 'കാലാവസ്ഥ',
@@ -717,8 +717,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search വഴി പരിശോധിച്ചത്',
   },
   Odia: {
-    appTitle: 'କିଷାନ ପାଣିପାଗ',
-    tagline: 'କୃଷକମାନଙ୍କ ପାଇଁ ନିର୍ଭରଯୋଗ୍ୟ ପାଣିପାଗ ଓ ଫସଲ ପରାମର୍ଶ',
+    appTitle: 'କିଷାନ କେୟାର (Kisaan Care)',
+    tagline: 'କୃଷକମାନଙ୍କ ପାଇଁ ପାଣିପାଗ, ଫସଲ ସୁରକ୍ଷା ଓ ଯତ୍ନ ସାଥୀ',
     selectLanguage: 'ଆପଣଙ୍କ ଭାଷା ବାଛନ୍ତୁ',
     changeLanguage: 'ଭାଷା ବଦଳାନ୍ତୁ',
     home: 'ପାଣିପାଗ',
@@ -787,8 +787,8 @@ export const TRANSLATIONS: Record<SupportedLanguage, TranslationDictionary> = {
     googleSearchVerified: 'Google Search ଦ୍ୱାରା ପ୍ରମାଣିତ',
   },
   English: {
-    appTitle: 'Kisan Mausam',
-    tagline: 'Farmer Weather & Crop Advisory Companion',
+    appTitle: 'Kisaan Care',
+    tagline: 'Farmer Weather, Crop Advisory & Protection Companion',
     selectLanguage: 'Select Your Language',
     changeLanguage: 'Change Language',
     home: 'Weather',

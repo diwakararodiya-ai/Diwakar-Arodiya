@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "किसान मौसम - Kisan Mausam Native",
-  "short_name": "KisanMausam",
-  "description": "भारतीय किसानों के लिए मौसम, लाइव वर्षा रडार, फसल सुरक्षा व दैनिक कृषि समाचार",
+  "name": "Kisaan Care - किसान केयर",
+  "short_name": "KisaanCare",
+  "description": "Kisaan Care: भारतीय किसानों के लिए मौसम, लाइव वर्षा रडार, फसल सुरक्षा व दैनिक कृषि समाचार",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -41,23 +41,25 @@
   ],
   "shortcuts": [
     {
-      "name": "मौसम रडार (Radar)",
-      "short_name": "Radar",
-      "url": "/",
+      "name": "Live Weather & Radar",
+      "short_name": "Weather",
+      "description": "Check current weather and live Doppler radar",
+      "url": "/?tab=home",
       "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
     },
     {
-      "name": "कृषि समाचार (News)",
-      "short_name": "News",
+      "name": "Agri News & Schemes",
+      "short_name": "AgriNews",
+      "description": "Daily verified farming news and mandi rates",
       "url": "/?tab=news",
       "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
     },
     {
-      "name": "किसान AI मित्र (AI Chat)",
-      "short_name": "AI Mitra",
+      "name": "Kisaan AI Mitra",
+      "short_name": "AI Care",
+      "description": "Voice & chat agricultural AI advisor",
       "url": "/?tab=ai",
       "icons": [{ "src": "/pwa-192x192.png", "sizes": "192x192" }]
     }
-  ],
-  "prefer_related_applications": false
+  ]
 }

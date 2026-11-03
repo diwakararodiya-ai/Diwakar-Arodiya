@@ -1,9 +1,10 @@
-const CACHE_NAME = 'kisan-mausam-v2';
+const CACHE_NAME = 'kisaan-care-v1';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/manifest.webmanifest',
   '/icon.svg',
+  '/logo.svg',
   '/pwa-192x192.png',
   '/pwa-512x512.png',
   '/apple-touch-icon.png',

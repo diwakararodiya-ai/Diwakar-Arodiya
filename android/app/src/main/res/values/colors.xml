@@ -1,0 +1,12 @@
+<resources>
+    <color name="primary_emerald">#064E3B</color>
+    <color name="primary_dark">#022C22</color>
+    <color name="accent_amber">#F59E0B</color>
+    <color name="accent_gold">#FBBF24</color>
+    <color name="background_light">#F8FAFC</color>
+    <color name="surface_dark">#0F172A</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="status_bar_color">#064E3B</color>
+    <color name="nav_bar_color">#064E3B</color>
+</resources>

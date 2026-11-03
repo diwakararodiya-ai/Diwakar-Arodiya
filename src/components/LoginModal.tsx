@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { UserProfile, SupportedLanguage } from '../types';
 import { User, Mail, Phone, X, Check, ArrowRight, LogOut, Edit3, ShieldCheck, Sparkles } from 'lucide-react';
+import { KisaanCareLogo } from './KisaanCareLogo';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -122,15 +123,15 @@ export const LoginModal: React.FC<LoginModalProps> = ({
         {/* Header */}
         <div className="bg-gradient-to-r from-emerald-950 via-emerald-900 to-stone-900 text-white p-4 sm:p-5 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-amber-400 text-stone-950 flex items-center justify-center font-bold text-lg shadow-sm border border-amber-200 shrink-0">
-              {user?.isLoggedIn && !isEditing ? (
+            {user?.isLoggedIn && !isEditing ? (
+              <div className="w-10 h-10 rounded-xl bg-amber-400 text-stone-950 flex items-center justify-center font-bold text-lg shadow-sm border border-amber-200 shrink-0">
                 <span className="font-extrabold text-base">
                   {user.name.trim().charAt(0).toUpperCase()}
                 </span>
-              ) : (
-                <User className="w-5 h-5 text-stone-950" />
-              )}
-            </div>
+              </div>
+            ) : (
+              <KisaanCareLogo size="sm" />
+            )}
             <div>
               <h3 className="font-bold text-base sm:text-lg leading-tight text-white">
                 {user?.isLoggedIn && !isEditing
@@ -138,8 +139,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                     ? 'किसान प्रोफ़ाइल'
                     : 'Farmer Profile'
                   : isHindi
-                  ? 'लॉगिन करें'
-                  : 'Minimal Sign In'}
+                  ? 'किसान केयर लॉगिन'
+                  : 'Kisaan Care Sign In'}
               </h3>
               <p className="text-xs text-emerald-200/90 mt-0.5">
                 {user?.isLoggedIn && !isEditing
@@ -147,8 +148,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                     ? 'आपकी व्यक्तिगत जानकारी'
                     : 'Your verified account details'
                   : isHindi
-                  ? 'नाम, ईमेल और नंबर दर्ज करें'
-                  : 'Enter name, email & phone number'}
+                  ? 'नाम, ईमेल और नंबर से सुरक्षित लॉगिन'
+                  : 'Secure access with name, email & phone'}
               </p>
             </div>
           </div>

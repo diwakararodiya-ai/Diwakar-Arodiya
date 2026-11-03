@@ -22,9 +22,20 @@ app.use((req, res, next) => {
   } else if (req.path === '/manifest.webmanifest' || req.path === '/manifest.json') {
     res.setHeader('Content-Type', 'application/manifest+json');
     res.setHeader('Cache-Control', 'public, max-age=3600');
+  } else if (req.path === '/.well-known/assetlinks.json') {
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Origin', '*');
   }
   next();
 });
+
+// Explicit Google Play Digital Asset Links route
+app.get('/.well-known/assetlinks.json', (_req, res) => {
+  res.setHeader('Content-Type', 'application/json');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.sendFile(path.resolve(__dirname, 'public', '.well-known', 'assetlinks.json'));
+});
+
 app.use(express.static(path.resolve(__dirname, 'public')));
 
 // Server-side Gemini initialization with telemetry header
@@ -447,7 +458,7 @@ app.post('/api/ai/chat', async (req, res) => {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    const systemInstruction = `You are "Kisan Mausam Mitra" (किसान मौसम मित्र), an expert, empathetic, and farmer-centric agricultural weather companion designed specifically for Indian farmers.
+    const systemInstruction = `You are "Kisaan Care Mitra" (किसान केयर मित्र), an expert, empathetic, and farmer-centric agricultural weather and crop care companion designed specifically for Indian farmers.
 
 Your Core Duties:
 1. Speak in the farmer's selected language: "${language}". Use authentic, natural, and respectful regional conversational phrasing, NOT robotic or literal machine translation. Use colloquial farming terms (e.g. in Hindi: बुवाई, कल्ले फूटना, बालियां आना, सिंचाई, कीटनाशक/फफूंदनाशक छिड़काव, पाला, लू, आंधी, जलभराव).
@@ -1160,7 +1171,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Kisan Mausam server running on port ${PORT}`);
+    console.log(`Kisaan Care server running on port ${PORT}`);
   });
 }
 

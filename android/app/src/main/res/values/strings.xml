@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Kisaan Care</string>
+    <string name="app_name_hindi">किसान केयर</string>
+    <string name="host_name">ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app</string>
+    <string name="default_web_url">https://ais-pre-pz2zsczi37ff4zhdifuvfc-273538622245.asia-southeast1.run.app</string>
+    
+    <!-- Asset statements linking the app to Digital Asset Links on the server -->
+    <string name="asset_statements" translatable="false">
+        [{\n
+            \"relation\": [\"delegate_permission/common.handle_all_urls\"],\n
+            \"target\": {\n
+                \"namespace\": \"android_app\",\n
+                \"package_name\": \"com.kisaancare.app\",\n
+                \"sha256_cert_fingerprints\": [\"14:6D:E9:7D:0F:52:AB:E0:85:41:CA:B2:4E:55:43:BE:00:84:4F:0B:83:F2:9A:6F:A9:07:61:3A:09:00:E6:E6\"]\n
+            }\n
+        }]
+    </string>
+</resources>

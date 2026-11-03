@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Background Circle/Squircle Gradient -->
+    <linearGradient id="lgBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b" />
+      <stop offset="60%" stop-color="#022c22" />
+      <stop offset="100%" stop-color="#031a14" />
+    </linearGradient>
+
+    <!-- Golden Sun Gradient -->
+    <radialGradient id="lgSun" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#fef08a" />
+      <stop offset="65%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </radialGradient>
+
+    <!-- Primary Caring Leaf -->
+    <linearGradient id="lgLeafL" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+
+    <!-- Rising Sprout -->
+    <linearGradient id="lgLeafR" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="60%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#6ee7b7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular Emblem Background -->
+  <circle cx="128" cy="128" r="120" fill="url(#lgBg)" />
+  <circle cx="128" cy="128" r="116" fill="none" stroke="#34d399" stroke-width="2.5" stroke-opacity="0.35" />
+
+  <!-- Minimal Icon: Sun / Vitality Orb -->
+  <circle cx="154" cy="80" r="32" fill="#facc15" fill-opacity="0.18" />
+  <circle cx="154" cy="80" r="26" fill="url(#lgSun)" />
+
+  <!-- Minimal Icon: Caring Left Leaf -->
+  <path
+    d="M 128 212 C 82 206 54 168 54 122 C 54 74 90 42 126 28 C 112 64 114 102 126 138 C 131 154 133 182 128 212 Z"
+    fill="url(#lgLeafL)"
+  />
+
+  <!-- Minimal Icon: Rising Right Sprout -->
+  <path
+    d="M 128 212 C 148 184 182 158 196 126 C 210 94 200 64 182 46 C 190 72 186 102 164 132 C 148 154 138 180 128 212 Z"
+    fill="url(#lgLeafR)"
+  />
+
+  <!-- Minimal Icon: Delicate Center Stem Accent -->
+  <path
+    d="M 128 212 C 129 180 134 150 142 126"
+    stroke="#a7f3d0"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-opacity="0.45"
+  />
+</svg>
